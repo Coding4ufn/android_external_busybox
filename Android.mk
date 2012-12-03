@@ -75,6 +75,11 @@ ifeq ($(TARGET_ARCH),arm)
 	android/libc/arch-arm/syscalls/sysinfo.S
 endif
 
+ifeq ($(TARGET_ARCH),x86)
+	BUSYBOX_SRC_FILES += \
+	android/libc/arch-x86/syscalls.c
+endif
+
 ifeq ($(TARGET_ARCH),mips)
 	BUSYBOX_SRC_FILES += \
 	android/libc/arch-mips/syscalls/adjtimex.S \
